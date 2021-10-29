@@ -1,0 +1,2961 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "NoFrixion.MoneyMoov.Api",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/v{version}/AccountToAccountTransfer/GetAspsp": {
+      "get": {
+        "tags": [
+          "AccountToAccountTransfer"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BankProviderResponse"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BankProviderResponse"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BankProviderResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/AccountToAccountTransfer/InitiatePayment/{merchantId}": {
+      "post": {
+        "tags": [
+          "AccountToAccountTransfer"
+        ],
+        "parameters": [
+          {
+            "name": "merchantId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BankPaymentRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BankPaymentRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BankPaymentRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BankPaymentRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BankPaymentResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BankPaymentResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BankPaymentResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/CyberSource": {
+      "post": {
+        "tags": [
+          "CyberSource"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaymentOrderModel"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaymentOrderModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaymentOrderModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaymentOrderModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentResponseModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentResponseModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentResponseModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/MerchantAccount/{merchantId}": {
+      "get": {
+        "tags": [
+          "MerchantAccount"
+        ],
+        "parameters": [
+          {
+            "name": "merchantId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MerchantAccount"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MerchantAccount"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MerchantAccount"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/Metadata/Version": {
+      "get": {
+        "tags": [
+          "Metadata"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/Metadata/whoami": {
+      "get": {
+        "tags": [
+          "Metadata"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/Metadata/whoamistrong": {
+      "get": {
+        "tags": [
+          "Metadata"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/Payment": {
+      "get": {
+        "tags": [
+          "Payment"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PaymentSend"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PaymentSend"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PaymentSend"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Payment"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "ID": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "AccountID": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "UserID": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "Type": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "Description": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "Currency": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "Amount": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "YourReference": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "DestinationAccountID": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "DestinationIBAN": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "DestinationAccountName": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "TheirReference": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "StatusID": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Inserted": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "LastUpdated": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "Account.ID": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "Account.MerchantID": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "Account.Description": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "Account.Currency": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "Account.Balance": {
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "Account.Inserted": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "Account.LastUpdated": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "Account.Merchant.ID": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "Account.Merchant.Name": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "Account.Merchant.Inserted": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "Account.Merchant.LastUpdated": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "Account.Merchant.Enabled": {
+                    "type": "boolean"
+                  },
+                  "Account.Merchant.Accounts": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Account"
+                    },
+                    "nullable": true
+                  },
+                  "Account.Merchant.MerchantTokens": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/MerchantToken"
+                    },
+                    "nullable": true
+                  },
+                  "Account.Merchant.UserRoles": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/UserRole"
+                    },
+                    "nullable": true
+                  },
+                  "Account.A2APaymentRequests": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/A2APaymentRequest"
+                    },
+                    "nullable": true
+                  },
+                  "Account.PaymentSendAccounts": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PaymentSend"
+                    },
+                    "nullable": true
+                  },
+                  "Account.PaymentSendDestinationAccounts": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PaymentSend"
+                    },
+                    "nullable": true
+                  },
+                  "Account.A2ATransactions": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/A2ATransaction"
+                    },
+                    "nullable": true
+                  },
+                  "DestinationAccount.ID": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "DestinationAccount.MerchantID": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "DestinationAccount.Description": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "DestinationAccount.Currency": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "DestinationAccount.Balance": {
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "DestinationAccount.Inserted": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "DestinationAccount.LastUpdated": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "DestinationAccount.Merchant.ID": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "DestinationAccount.Merchant.Name": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "DestinationAccount.Merchant.Inserted": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "DestinationAccount.Merchant.LastUpdated": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "DestinationAccount.Merchant.Enabled": {
+                    "type": "boolean"
+                  },
+                  "DestinationAccount.Merchant.Accounts": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Account"
+                    },
+                    "nullable": true
+                  },
+                  "DestinationAccount.Merchant.MerchantTokens": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/MerchantToken"
+                    },
+                    "nullable": true
+                  },
+                  "DestinationAccount.Merchant.UserRoles": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/UserRole"
+                    },
+                    "nullable": true
+                  },
+                  "DestinationAccount.A2APaymentRequests": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/A2APaymentRequest"
+                    },
+                    "nullable": true
+                  },
+                  "DestinationAccount.PaymentSendAccounts": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PaymentSend"
+                    },
+                    "nullable": true
+                  },
+                  "DestinationAccount.PaymentSendDestinationAccounts": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PaymentSend"
+                    },
+                    "nullable": true
+                  },
+                  "DestinationAccount.A2ATransactions": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/A2ATransaction"
+                    },
+                    "nullable": true
+                  },
+                  "User.ID": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "User.Auth0UserID": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "User.Inserted": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "User.LastUpdated": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "User.Enabled": {
+                    "type": "boolean"
+                  },
+                  "User.PaymentSends": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PaymentSend"
+                    },
+                    "nullable": true
+                  },
+                  "User.UserRoles": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/UserRole"
+                    },
+                    "nullable": true
+                  },
+                  "User.UserTokens": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/UserToken"
+                    },
+                    "nullable": true
+                  }
+                }
+              },
+              "encoding": {
+                "ID": {
+                  "style": "form"
+                },
+                "AccountID": {
+                  "style": "form"
+                },
+                "UserID": {
+                  "style": "form"
+                },
+                "Type": {
+                  "style": "form"
+                },
+                "Description": {
+                  "style": "form"
+                },
+                "Currency": {
+                  "style": "form"
+                },
+                "Amount": {
+                  "style": "form"
+                },
+                "YourReference": {
+                  "style": "form"
+                },
+                "DestinationAccountID": {
+                  "style": "form"
+                },
+                "DestinationIBAN": {
+                  "style": "form"
+                },
+                "DestinationAccountName": {
+                  "style": "form"
+                },
+                "TheirReference": {
+                  "style": "form"
+                },
+                "StatusID": {
+                  "style": "form"
+                },
+                "Inserted": {
+                  "style": "form"
+                },
+                "LastUpdated": {
+                  "style": "form"
+                },
+                "Account.ID": {
+                  "style": "form"
+                },
+                "Account.MerchantID": {
+                  "style": "form"
+                },
+                "Account.Description": {
+                  "style": "form"
+                },
+                "Account.Currency": {
+                  "style": "form"
+                },
+                "Account.Balance": {
+                  "style": "form"
+                },
+                "Account.Inserted": {
+                  "style": "form"
+                },
+                "Account.LastUpdated": {
+                  "style": "form"
+                },
+                "Account.Merchant.ID": {
+                  "style": "form"
+                },
+                "Account.Merchant.Name": {
+                  "style": "form"
+                },
+                "Account.Merchant.Inserted": {
+                  "style": "form"
+                },
+                "Account.Merchant.LastUpdated": {
+                  "style": "form"
+                },
+                "Account.Merchant.Enabled": {
+                  "style": "form"
+                },
+                "Account.Merchant.Accounts": {
+                  "style": "form"
+                },
+                "Account.Merchant.MerchantTokens": {
+                  "style": "form"
+                },
+                "Account.Merchant.UserRoles": {
+                  "style": "form"
+                },
+                "Account.A2APaymentRequests": {
+                  "style": "form"
+                },
+                "Account.PaymentSendAccounts": {
+                  "style": "form"
+                },
+                "Account.PaymentSendDestinationAccounts": {
+                  "style": "form"
+                },
+                "Account.A2ATransactions": {
+                  "style": "form"
+                },
+                "DestinationAccount.ID": {
+                  "style": "form"
+                },
+                "DestinationAccount.MerchantID": {
+                  "style": "form"
+                },
+                "DestinationAccount.Description": {
+                  "style": "form"
+                },
+                "DestinationAccount.Currency": {
+                  "style": "form"
+                },
+                "DestinationAccount.Balance": {
+                  "style": "form"
+                },
+                "DestinationAccount.Inserted": {
+                  "style": "form"
+                },
+                "DestinationAccount.LastUpdated": {
+                  "style": "form"
+                },
+                "DestinationAccount.Merchant.ID": {
+                  "style": "form"
+                },
+                "DestinationAccount.Merchant.Name": {
+                  "style": "form"
+                },
+                "DestinationAccount.Merchant.Inserted": {
+                  "style": "form"
+                },
+                "DestinationAccount.Merchant.LastUpdated": {
+                  "style": "form"
+                },
+                "DestinationAccount.Merchant.Enabled": {
+                  "style": "form"
+                },
+                "DestinationAccount.Merchant.Accounts": {
+                  "style": "form"
+                },
+                "DestinationAccount.Merchant.MerchantTokens": {
+                  "style": "form"
+                },
+                "DestinationAccount.Merchant.UserRoles": {
+                  "style": "form"
+                },
+                "DestinationAccount.A2APaymentRequests": {
+                  "style": "form"
+                },
+                "DestinationAccount.PaymentSendAccounts": {
+                  "style": "form"
+                },
+                "DestinationAccount.PaymentSendDestinationAccounts": {
+                  "style": "form"
+                },
+                "DestinationAccount.A2ATransactions": {
+                  "style": "form"
+                },
+                "User.ID": {
+                  "style": "form"
+                },
+                "User.Auth0UserID": {
+                  "style": "form"
+                },
+                "User.Inserted": {
+                  "style": "form"
+                },
+                "User.LastUpdated": {
+                  "style": "form"
+                },
+                "User.Enabled": {
+                  "style": "form"
+                },
+                "User.PaymentSends": {
+                  "style": "form"
+                },
+                "User.UserRoles": {
+                  "style": "form"
+                },
+                "User.UserTokens": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Payment"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v{version}/Payment/GetPaymentById/{id}": {
+      "get": {
+        "tags": [
+          "Payment"
+        ],
+        "parameters": [
+          {
+            "name": "paymentId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentSend"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentSend"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentSend"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/Payment/submit": {
+      "put": {
+        "tags": [
+          "Payment"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Payment"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Payment"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Payment"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/Transactions/{accountId}": {
+      "get": {
+        "tags": [
+          "Transactions"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "fromTransactionDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0,
+              "nullable": true
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 20,
+              "nullable": true
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionPageResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionPageResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionPageResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/Transactions/Save": {
+      "post": {
+        "tags": [
+          "Transactions"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v{version}/Transactions/GetTransactionStatement/{merchantId}/{accountId}": {
+      "get": {
+        "tags": [
+          "Transactions"
+        ],
+        "parameters": [
+          {
+            "name": "merchantId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v{version}/User": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/User/tokens/{tokenType}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "tokenType",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/TokenTypesEnum"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UserToken"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UserToken"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UserToken"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/User/token/{preTokenState}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "preTokenState",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserToken"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserToken"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserToken"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/User/token": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserToken"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserToken"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserToken"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserToken"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserToken"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserToken"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserToken"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserToken"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BankCapabilityStatus": {
+        "enum": [
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "BankCapabilityType": {
+        "enum": [
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "BankCapability": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/BankCapabilityStatus"
+          },
+          "type": {
+            "$ref": "#/components/schemas/BankCapabilityType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BankProviderResponse": {
+        "type": "object",
+        "properties": {
+          "capabilities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BankCapability"
+            },
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DestinationBankType": {
+        "enum": [
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "DestinationBank": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/DestinationBankType"
+          },
+          "accountNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "sortCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Currency": {
+        "enum": [
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "BankPaymentAmount": {
+        "type": "object",
+        "properties": {
+          "currency": {
+            "$ref": "#/components/schemas/Currency"
+          },
+          "value": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PaymentContextCode": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "Country": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166,
+          167,
+          168,
+          169,
+          170,
+          171,
+          172,
+          173,
+          174,
+          175,
+          176,
+          177,
+          178,
+          179,
+          180,
+          181,
+          182,
+          183,
+          184,
+          185,
+          186,
+          187,
+          188,
+          189,
+          190,
+          191,
+          192,
+          193,
+          194,
+          195,
+          196,
+          197,
+          198,
+          199,
+          200,
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          207,
+          208,
+          209,
+          210,
+          211,
+          212,
+          213,
+          214,
+          215,
+          216,
+          217,
+          218,
+          219,
+          220,
+          221,
+          222,
+          223,
+          224,
+          225,
+          226,
+          227,
+          228,
+          229,
+          230,
+          231,
+          232,
+          233,
+          234,
+          235,
+          236,
+          237,
+          238,
+          239,
+          240,
+          241,
+          242,
+          243,
+          244,
+          245,
+          246,
+          247,
+          248,
+          249,
+          250,
+          251
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "DeliveryAddress": {
+        "type": "object",
+        "properties": {
+          "country": {
+            "$ref": "#/components/schemas/Country"
+          },
+          "addressLine1": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressLine2": {
+            "type": "string",
+            "nullable": true
+          },
+          "postCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "postTown": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BankLegacyPaymentContext": {
+        "type": "object",
+        "properties": {
+          "paymentContextCode": {
+            "$ref": "#/components/schemas/PaymentContextCode"
+          },
+          "deliveryAddress": {
+            "$ref": "#/components/schemas/DeliveryAddress"
+          },
+          "merchantCategoryCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "merchantCustomerIdentification": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BankPaymentRequest": {
+        "type": "object",
+        "properties": {
+          "bankId": {
+            "type": "string",
+            "nullable": true
+          },
+          "destination": {
+            "$ref": "#/components/schemas/DestinationBank"
+          },
+          "paymentAmount": {
+            "$ref": "#/components/schemas/BankPaymentAmount"
+          },
+          "code": {
+            "$ref": "#/components/schemas/PaymentContextCode"
+          },
+          "paymentReference": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentContext": {
+            "$ref": "#/components/schemas/BankLegacyPaymentContext"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BankPaymentResponse": {
+        "type": "object",
+        "properties": {
+          "paymentInitiationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "redirectUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PaymentOrderModel": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "county": {
+            "type": "string",
+            "nullable": true
+          },
+          "eirCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "countryCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "transientToken": {
+            "type": "string",
+            "nullable": true
+          },
+          "currencyCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "total": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PaymentResponseErrorModel": {
+        "type": "object",
+        "properties": {
+          "errorCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "reason": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PaymentResponseModel": {
+        "type": "object",
+        "properties": {
+          "authorizedAmount": {
+            "type": "string",
+            "nullable": true
+          },
+          "currencyCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "responseCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "transactionID": {
+            "type": "string",
+            "nullable": true
+          },
+          "error": {
+            "$ref": "#/components/schemas/PaymentResponseErrorModel"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AccountStatus": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "AccountIdentifierType": {
+        "enum": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "CountrySpecificDetails": {
+        "type": "object",
+        "properties": {
+          "bankAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "bankBranchCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "bankBranchName": {
+            "type": "string",
+            "nullable": true
+          },
+          "bankCity": {
+            "type": "string",
+            "nullable": true
+          },
+          "bankCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "bankName": {
+            "type": "string",
+            "nullable": true
+          },
+          "business": {
+            "type": "boolean"
+          },
+          "chineseId": {
+            "type": "string",
+            "nullable": true
+          },
+          "province": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AccountIdentifier": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/AccountIdentifierType"
+          },
+          "accountNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "bic": {
+            "type": "string",
+            "nullable": true
+          },
+          "countrySpecificDetails": {
+            "$ref": "#/components/schemas/CountrySpecificDetails"
+          },
+          "currency": {
+            "type": "string",
+            "nullable": true
+          },
+          "iban": {
+            "type": "string",
+            "nullable": true
+          },
+          "sortCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MerchantAccount": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/AccountStatus"
+          },
+          "accessGroups": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "availableBalance": {
+            "type": "string",
+            "nullable": true
+          },
+          "balance": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "currency": {
+            "type": "string",
+            "nullable": true
+          },
+          "customerId": {
+            "type": "string",
+            "nullable": true
+          },
+          "customerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "directDebit": {
+            "type": "boolean"
+          },
+          "externalReference": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "identifiers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountIdentifier"
+            },
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MerchantToken": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "merchantID": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "token": {
+            "type": "string",
+            "nullable": true
+          },
+          "permissions": {
+            "type": "string",
+            "nullable": true
+          },
+          "inserted": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastUpdated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "merchant": {
+            "$ref": "#/components/schemas/Merchant"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserToken": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "userID": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "preTokenState": {
+            "type": "string",
+            "nullable": true
+          },
+          "accessTokenHash": {
+            "type": "string",
+            "nullable": true
+          },
+          "refreshToken": {
+            "type": "string",
+            "nullable": true
+          },
+          "inserted": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastUpdated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          }
+        },
+        "additionalProperties": false
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "auth0UserID": {
+            "type": "string",
+            "nullable": true
+          },
+          "inserted": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastUpdated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "paymentSends": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentSend"
+            },
+            "nullable": true
+          },
+          "userRoles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserRole"
+            },
+            "nullable": true
+          },
+          "userTokens": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserToken"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserRole": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "userID": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "merchantID": {
+            "type": "string",
+            "nullable": true
+          },
+          "roleType": {
+            "type": "string",
+            "nullable": true
+          },
+          "inserted": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastUpdated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          },
+          "merchant": {
+            "$ref": "#/components/schemas/Merchant"
+          },
+          "accountID": {
+            "type": "string",
+            "nullable": true
+          },
+          "account": {
+            "$ref": "#/components/schemas/Account"
+          },
+          "auth0UserID": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Merchant": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "inserted": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastUpdated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "accounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Account"
+            },
+            "nullable": true
+          },
+          "merchantTokens": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MerchantToken"
+            },
+            "nullable": true
+          },
+          "userRoles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserRole"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "A2APaymentRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "accountID": {
+            "type": "string",
+            "nullable": true
+          },
+          "merchantCustomerID": {
+            "type": "string",
+            "nullable": true
+          },
+          "initiationID": {
+            "type": "string",
+            "nullable": true
+          },
+          "link": {
+            "type": "string",
+            "nullable": true
+          },
+          "aspspid": {
+            "type": "string",
+            "nullable": true
+          },
+          "reference": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "currency": {
+            "type": "string",
+            "nullable": true
+          },
+          "inserted": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastUpdated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "statusID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "destinationType": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationName": {
+            "type": "string",
+            "nullable": true
+          },
+          "contextCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "merchantCategoryCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "merchantCategoryIdentification": {
+            "type": "string",
+            "nullable": true
+          },
+          "account": {
+            "$ref": "#/components/schemas/Account"
+          }
+        },
+        "additionalProperties": false
+      },
+      "A2ATransaction": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "accountID": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "currency": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "transactionDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "postedDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "inserted": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastUpdated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "credit": {
+            "type": "boolean"
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "payerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "payerAddressCountry": {
+            "type": "string",
+            "nullable": true
+          },
+          "payerAddressPostCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "payerAddressTown": {
+            "type": "string",
+            "nullable": true
+          },
+          "payerAddressLine1": {
+            "type": "string",
+            "nullable": true
+          },
+          "payerAddressLine2": {
+            "type": "string",
+            "nullable": true
+          },
+          "account": {
+            "$ref": "#/components/schemas/Account"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Account": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "merchantID": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "currency": {
+            "type": "string",
+            "nullable": true
+          },
+          "balance": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "inserted": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastUpdated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "merchant": {
+            "$ref": "#/components/schemas/Merchant"
+          },
+          "a2APaymentRequests": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/A2APaymentRequest"
+            },
+            "nullable": true
+          },
+          "paymentSendAccounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentSend"
+            },
+            "nullable": true
+          },
+          "paymentSendDestinationAccounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentSend"
+            },
+            "nullable": true
+          },
+          "a2ATransactions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/A2ATransaction"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PaymentSend": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "accountID": {
+            "type": "string",
+            "nullable": true
+          },
+          "userID": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "currency": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "yourReference": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationAccountID": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationIBAN": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationAccountName": {
+            "type": "string",
+            "nullable": true
+          },
+          "theirReference": {
+            "type": "string",
+            "nullable": true
+          },
+          "statusID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "inserted": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastUpdated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "account": {
+            "$ref": "#/components/schemas/Account"
+          },
+          "destinationAccount": {
+            "$ref": "#/components/schemas/Account"
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PaymentApprovalStatus": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "PaymentStatus": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "PaymentSchemeInfo": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "responseCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Payment": {
+        "type": "object",
+        "properties": {
+          "approvalStatus": {
+            "$ref": "#/components/schemas/PaymentApprovalStatus"
+          },
+          "status": {
+            "$ref": "#/components/schemas/PaymentStatus"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "schemeInfo": {
+            "$ref": "#/components/schemas/PaymentSchemeInfo"
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "externalReference": {
+            "type": "string",
+            "nullable": true
+          },
+          "details": {
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TransactionType": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "Address": {
+        "type": "object",
+        "properties": {
+          "country": {
+            "type": "string",
+            "nullable": true
+          },
+          "postCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "postTown": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressLine1": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressLine2": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Identifier": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "accountNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "sortCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Payer": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "$ref": "#/components/schemas/Address"
+          },
+          "identifier": {
+            "$ref": "#/components/schemas/Identifier"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AdditionalInfo": {
+        "type": "object",
+        "properties": {
+          "payer": {
+            "$ref": "#/components/schemas/Payer"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Transaction": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/TransactionType"
+          },
+          "merchantAccount": {
+            "$ref": "#/components/schemas/MerchantAccount"
+          },
+          "payerInfo": {
+            "$ref": "#/components/schemas/AdditionalInfo"
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "credit": {
+            "type": "boolean"
+          },
+          "currency": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "postedDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "sourceExternalReference": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "transactionDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TransactionPageResponse": {
+        "type": "object",
+        "properties": {
+          "transactions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Transaction"
+            },
+            "nullable": true
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageStartBalance": {
+            "type": "number",
+            "format": "double"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalSize": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TokenTypesEnum": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      }
+    }
+  }
+}
